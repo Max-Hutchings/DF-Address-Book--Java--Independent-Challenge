@@ -9,6 +9,10 @@ title: Address Book
 classDiagram
 %%    User <-- AddressBook
 %%    AddressBook <-- Contact
+
+    direction TB
+    User <-- AddressBook
+    AddressBook <-- Contact
     
     class User{
         -int id
@@ -78,7 +82,7 @@ classDiagram
         +validateEmail()$ String
     }
     
-    class Saver{
+    class Dao{
         <<abstract>>
         +saveContact()$ void
         +saveAddressBook()$ void
