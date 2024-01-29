@@ -1,6 +1,9 @@
-package com.addressbook.entity;
+package main.java.com.addressbook.entity;
 
 import java.util.ArrayList;
+import main.java.com.addressbook.entity.Contact;
+
+
 
 // TODO: build test for added contact to contacts
 // TODO: build test and implement for print address book
@@ -11,6 +14,7 @@ public class AddressBook {
     private String addressBookName;
     private int userId;
     private ArrayList<Contact> contacts;
+
 
     public AddressBook(String addressBookName){
         this.addressBookName = addressBookName;

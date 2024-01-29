@@ -1,4 +1,4 @@
-package com.addressbook.entity;
+package main.java.com.addressbook.entity;
 
 // TODO: build test and implement get contacts details
 

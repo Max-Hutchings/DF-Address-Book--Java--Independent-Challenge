@@ -1,4 +1,4 @@
-package com.addressbook;
+package main.java.Com.addressbook;
 
 public class AddressBookApplication {
 
