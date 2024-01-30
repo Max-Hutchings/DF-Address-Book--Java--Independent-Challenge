@@ -1,9 +1,12 @@
 package java.com.addressbook.model;
 
-import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import main.java.com.addressbook.entity.Contact;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.Test;
+
+import java.com.addressbook.entity.Contact;
+
+//import java.com.addressbook.terminal.Saver;
 
 
 public class ContactTest {

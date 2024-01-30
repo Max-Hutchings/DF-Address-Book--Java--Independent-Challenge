@@ -1,7 +1,7 @@
-package main.java.com.addressbook.entity;
+package java.com.addressbook.entity;
 
 import java.util.ArrayList;
-import main.java.com.addressbook.entity.Contact;
+import java.com.addressbook.entity.Contact;
 
 
 
