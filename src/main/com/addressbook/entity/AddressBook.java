@@ -1,4 +1,4 @@
-package java.com.addressbook.entity;
+package com.addressbook.entity;
 
 import java.util.ArrayList;
 

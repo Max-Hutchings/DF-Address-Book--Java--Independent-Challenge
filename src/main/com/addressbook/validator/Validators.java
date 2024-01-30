@@ -1,4 +1,4 @@
-package main.java.Com.addressbook.validator;
+package com.addressbook.validator;
 
 // TODO: build test and implement validateName()
 // TODO: build test and implement validatePhoneNumber()

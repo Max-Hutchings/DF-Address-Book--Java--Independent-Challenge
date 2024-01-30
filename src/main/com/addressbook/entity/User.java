@@ -1,10 +1,8 @@
-package java.com.addressbook.entity;
+package com.addressbook.entity;
 
 // TODO: add address book test and method
 // TODO: Build test for and implement print address books
 
-
-import java.com.addressbook.entity.AddressBook;
 
 import java.util.ArrayList;
 

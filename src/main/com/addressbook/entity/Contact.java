@@ -1,4 +1,4 @@
-package java.com.addressbook.entity;
+package com.addressbook.entity;
 
 // TODO: build test and implement get contacts details
 
@@ -56,6 +56,10 @@ public class Contact {
 
     public int getAddressBookId() {
         return addressBookId;
+    }
+
+    public String getContactDetails(){
+        return "yes";
     }
 
 }

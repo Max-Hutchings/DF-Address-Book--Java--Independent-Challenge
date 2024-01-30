@@ -1,4 +1,4 @@
-package java.com.addressbook.saver;
+package com.addressbook.saver;
 
 // TODO: Build test and static to get last id used from any table
 // TODO: Build test and implement save contact
@@ -8,9 +8,9 @@ package java.com.addressbook.saver;
 // TODO: Build test and implement getAddressBook
 
 
-import java.com.addressbook.entity.AddressBook;
-import java.com.addressbook.entity.Contact;
-import java.com.addressbook.entity.User;
+import com.addressbook.entity.AddressBook;
+import com.addressbook.entity.Contact;
+import com.addressbook.entity.User;
 
 public class Dao {
 
