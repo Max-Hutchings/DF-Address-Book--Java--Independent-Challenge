@@ -4,7 +4,7 @@ import com.addressbook.validator.Validators;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class ValidatorsTest {
 
@@ -48,4 +48,62 @@ public class ValidatorsTest {
             });
         }
     }
+
+
+    @Nested
+    class phoneNumberValidators{
+
+        @Test
+        public void testCorrectLength(){
+            // 11 is correct for 07710308733
+            // 13 is correct for +447710308733
+            String[] incorrectLengthNumbers = {
+                    "0000000000", // 10
+                    "000000000000", // 12
+                    "00000000000000" // 13
+            };
+            for (String number: incorrectLengthNumbers){
+                assertThrows(Exception.class, () -> {
+                    Validators.validatePhoneNumber(number);
+                });
+            }
+        }
+
+        @Test
+        public void testStartOfNumber() {
+//            Incorrect Number
+            assertThrows(Exception.class, () -> {
+                Validators.validatePhoneNumber("97710308733");
+            });
+            try {
+                // Correct Number
+                String result1 = Validators.validatePhoneNumber("07710308733");
+                assertEquals("07710308733", result1);
+
+//            Correct other number type
+                String result2 = Validators.validatePhoneNumber("+447710308733");
+                assertEquals("+447710308733", result2);
+
+            }catch(Exception e){
+                fail("Exception should not be thrown");
+            }
+        }
+
+        @Test
+        public void checkAllNumbersBesidesPlus() {
+            try {
+                String correctNumber = "+447710308733";
+                String result = Validators.validatePhoneNumber(correctNumber);
+                assertEquals(correctNumber, result);
+            } catch(Exception e){
+                fail("Exception should not be thrown");
+            }
+
+            String incorrectNumber = "077103t8733";
+            assertThrows(Exception.class, () -> {
+                Validators.validatePhoneNumber(incorrectNumber);
+            });
+        }
+    }
 }
+
