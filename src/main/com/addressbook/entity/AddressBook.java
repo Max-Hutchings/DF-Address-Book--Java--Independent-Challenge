@@ -13,7 +13,7 @@ public class AddressBook {
     private int id;
     private String addressBookName;
     private int userId;
-    private ArrayList<Contact> contacts;
+    private ArrayList<Contact> contacts = new ArrayList<>();
 
 
     public AddressBook(String addressBookName){

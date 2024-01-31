@@ -2,22 +2,25 @@ package com.addressbook.entity;
 
 // TODO: build test and implement get contacts details
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Contact {
 
     private static int nextId = 1;
     private int id;
     private String name;
-    private Long phoneNumber;
+    private String phoneNumber;
     private String email;
     private int addressBookId;
 
-    public Contact(String name, Long phoneNumber, String email){
+    public Contact(String name, String phoneNumber, String email){
         this.id = Contact.nextId ++;
         this.name = name;
         this.phoneNumber = phoneNumber;
         this.email = email;
     }
-    public Contact(int id, int addressBookId, String name, Long phoneNumber, String email){
+    public Contact(int id, int addressBookId, String name, String phoneNumber, String email){
         this.id = id;
         this.name = name;
         this.phoneNumber = phoneNumber;
@@ -38,11 +41,11 @@ public class Contact {
         this.name = name;
     }
 
-    public Long getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(Long phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
@@ -58,8 +61,13 @@ public class Contact {
         return addressBookId;
     }
 
-    public String getContactDetails(){
-        return "yes";
+    public Map<String, String> getContactDetails(){
+        Map<String, String> contactDetails = new HashMap<>();
+        contactDetails.put("id", Integer.toString(this.id));
+        contactDetails.put("name", this.name);
+        contactDetails.put("phoneNumber", this.phoneNumber);
+        contactDetails.put("email", this.email);
+        return contactDetails;
     }
 
 }
