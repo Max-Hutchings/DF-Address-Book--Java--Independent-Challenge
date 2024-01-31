@@ -14,16 +14,19 @@ public class AddressBook {
     private String addressBookName;
     private int userId;
     private ArrayList<Contact> contacts = new ArrayList<>();
+    private String createdDate;
 
 
     public AddressBook(String addressBookName){
         this.addressBookName = addressBookName;
+        this.createdDate = "17-03-2001";
     }
 
     public AddressBook(int id, String addressBookName, int userId){
         this.id = id;
         this.addressBookName = addressBookName;
         this.userId = userId;
+        this.createdDate = "17-03-2001";
     }
 
     public int getId() {
