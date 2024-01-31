@@ -34,19 +34,17 @@ public class AddressBookTest {
 
         String expectedValue = """
                 My favourite Address Book
-                ------------------------------------------------------------
+                -----------------------------------------------------------------
                 Contacts
-                ------------------------------------------------------------
+                -----------------------------------------------------------------
                 John Williams | 07710308744 | thephantommenace@gmail.com
-                Kate Perry | 0771345744 | babythefirework@gmail.com
+                Katy Perry | 0771345744 | babythefirework@gmail.com
                 """;
 
 //        Act
         String result = addressBook.printAddressBook();
 
-
 //        Assert
-
         assertEquals(expectedValue, result);
     }
 }

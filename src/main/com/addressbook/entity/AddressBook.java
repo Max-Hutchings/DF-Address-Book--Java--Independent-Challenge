@@ -57,4 +57,28 @@ public class AddressBook {
         contacts.add(contact);
         System.out.println("Added " + contact.getName() + " to contacts.");
     }
+
+    public String printAddressBook(){
+        StringBuilder message = new StringBuilder();
+        message.append(this.addressBookName);
+        message.append("\n-----------------------------------------------------------------");
+        message.append("\nContacts");
+        message.append("\n-----------------------------------------------------------------\n");
+
+        if (contacts.isEmpty()){
+            message.append(" - Add a contact :) \n");
+        }else{
+            for (Contact contact: contacts){
+                message.append(contact.getName());
+                message.append(" | ");
+                message.append(contact.getPhoneNumber());
+                message.append(" | ");
+                message.append(contact.getEmail());
+                message.append("\n");
+            }
+        }
+        System.out.println(message);
+        return message.toString();
+
+    }
 }
