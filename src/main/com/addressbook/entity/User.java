@@ -1,9 +1,5 @@
 package com.addressbook.entity;
 
-// TODO: add address book test and method
-// TODO: Build test for and implement print address books
-
-
 import java.util.ArrayList;
 
 public class User {
@@ -11,11 +7,11 @@ public class User {
     private int id;
     private String fName;
     private String lName;
-    private Long phoneNumber;
+    private String phoneNumber;
     private String email;
-    private ArrayList<AddressBook> addressBooks;
+    private ArrayList<AddressBook> addressBooks = new ArrayList<>();
 
-    User(String fName, String lName, Long phoneNumber, String email){
+    User(String fName, String lName, String phoneNumber, String email){
         this.id = User.nextId ++;
         this.fName = fName;
         this.lName = lName;
@@ -23,7 +19,7 @@ public class User {
         this.email = email;
     }
 
-    User(int id, String fName, String lName, Long phoneNumber, String email){
+    User(int id, String fName, String lName, String phoneNumber, String email){
         this.id = id;
         this.fName = fName;
         this.lName = lName;
@@ -47,7 +43,7 @@ public class User {
         return fName + " " + lName;
     }
 
-    public Long getPhoneNumber(){
+    public String getPhoneNumber(){
         return phoneNumber;
     }
 
@@ -55,8 +51,15 @@ public class User {
         return email;
     }
 
-    public ArrayList<AddressBook> getAddressBooks(){
+    public ArrayList<AddressBook> getAddressBookArrayList(){
         return addressBooks;
+    }
+
+//    Adds the address book and links the user id to the address book.
+    public void addAddressBook(AddressBook addressBook){
+        this.addressBooks.add(addressBook);
+        addressBook.setUserId(this.id);
+        System.out.println("Added to " + this.fName + "'s address books");
     }
 
     public void setFName(String fName){
@@ -67,12 +70,29 @@ public class User {
         this.lName = lName;
     }
 
-    public void setPhoneNumber(Long phoneNumber){
+    public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
     }
 
     public void setEmail(String email){
         this.email = email;
+    }
+
+    public String printAddressBooks(){
+        StringBuilder addressBookList = new StringBuilder();
+        addressBookList.append(this.getFullName()).append("'s address books");
+        addressBookList.append("\n------------------------");
+        if (this.addressBooks.isEmpty()){
+            addressBookList.append("No address books yet for ").append(this.getFName());
+            return addressBookList.toString();
+        }else {
+            for (AddressBook addressBook : this.addressBooks) {
+                addressBookList.append("\n");
+                addressBookList.append(addressBook.getAddressBookName());
+            }
+            System.out.println(addressBookList);
+            return addressBookList.toString();
+        }
     }
 
 
