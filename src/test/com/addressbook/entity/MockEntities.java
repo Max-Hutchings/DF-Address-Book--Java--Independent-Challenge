@@ -43,4 +43,15 @@ public class MockEntities {
 
         return mockContact;
     }
+
+    public static AddressBook getMockAddressBookInputDetails(int id, String name, int userId){
+        AddressBook mockAddressBook = mock(AddressBook.class);
+
+        when(mockAddressBook.getAddressBookName()).thenReturn(name);
+        when(mockAddressBook.getId()).thenReturn(id);
+        when(mockAddressBook.getUserId()).thenReturn(userId);
+
+        return mockAddressBook;
+
+    }
 }

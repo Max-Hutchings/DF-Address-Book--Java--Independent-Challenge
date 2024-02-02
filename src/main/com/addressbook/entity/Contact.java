@@ -2,6 +2,8 @@ package com.addressbook.entity;
 
 // TODO: build test and implement get contacts details
 
+import com.addressbook.validator.Validators;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,10 +16,10 @@ public class Contact {
     private String email;
     private int addressBookId;
 
-    public Contact(String name, String phoneNumber, String email){
+    public Contact(String name, String phoneNumber, String email) throws Exception {
         this.id = Contact.nextId ++;
-        this.name = name;
-        this.phoneNumber = phoneNumber;
+        this.name = Validators.validateName(name);
+        this.phoneNumber = Validators.validatePhoneNumber(phoneNumber);
         this.email = email;
     }
     public Contact(int id, int addressBookId, String name, String phoneNumber, String email){

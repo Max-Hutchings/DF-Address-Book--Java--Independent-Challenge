@@ -4,6 +4,8 @@ import com.addressbook.validator.Validators;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
+import javax.mail.internet.InternetAddress;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 public class ValidatorsTest {
@@ -104,6 +106,25 @@ public class ValidatorsTest {
                 Validators.validatePhoneNumber(incorrectNumber);
             });
         }
+    }
+
+    @Nested
+    class emailValidators{
+
+        @Test
+        public void testValidateEmail(){
+            try {
+                String email = "m.hutchings22@gmail.com";
+                InternetAddress emailAddressExpectedResult = new InternetAddress(email);
+                InternetAddress result = Validators.validateEmail(email);
+                assertEquals(emailAddressExpectedResult, result);
+            } catch(Exception e){
+                fail("This test should have passed with Exception");
+            }
+
+
+        }
+
     }
 }
 

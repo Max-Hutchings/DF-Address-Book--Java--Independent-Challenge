@@ -1,8 +1,8 @@
 package com.addressbook.validator;
 
-// TODO: build test and implement validateName()
-// TODO: build test and implement validatePhoneNumber()
-// TODO: Build test and implement validateEmail()
+
+import javax.mail.internet.AddressException;
+import javax.mail.internet.InternetAddress;
 
 public class Validators {
 
@@ -23,6 +23,17 @@ public class Validators {
         if (tempNum.charAt(0) != '0' && tempNum.charAt(0) != '+') throw new Exception("Please start the number with a 0 or +");
         if (!tempNum.matches("^[0-9+]*$")) throw new Exception("Please enter valid characters");
         return tempNum;
+    }
+
+
+    public static InternetAddress validateEmail(String email) throws Exception{
+        try{
+            InternetAddress emailAddress = new InternetAddress(email);
+            emailAddress.validate();
+            return emailAddress;
+        } catch(AddressException ex){
+            throw new Exception("Invalid Email Address");
+        }
     }
 
 

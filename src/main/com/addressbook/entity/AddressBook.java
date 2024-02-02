@@ -4,10 +4,6 @@ import java.util.ArrayList;
 
 
 
-
-// TODO: build test for added contact to contacts
-// TODO: build test and implement for print address book
-
 public class AddressBook {
     private static int nextId = 1;
     private int id;
