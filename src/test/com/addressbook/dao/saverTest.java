@@ -1,4 +1,4 @@
-package com.addressbook.saver;
+package com.addressbook.dao;
 
 import com.addressbook.terminal.Saver;
 

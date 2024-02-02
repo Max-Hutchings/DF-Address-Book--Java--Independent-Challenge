@@ -3,7 +3,7 @@ package com.addressbook.entity;
 import java.util.ArrayList;
 
 public class User {
-    private static int nextId = 1;
+
     private int id;
     private String fName;
     private String lName;
@@ -12,7 +12,7 @@ public class User {
     private ArrayList<AddressBook> addressBooks = new ArrayList<>();
 
     User(String fName, String lName, String phoneNumber, String email){
-        this.id = User.nextId ++;
+
         this.fName = fName;
         this.lName = lName;
         this.phoneNumber = phoneNumber;

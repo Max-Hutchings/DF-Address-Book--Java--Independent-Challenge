@@ -1,6 +1,6 @@
 package com.addressbook.entity;
 
-// TODO: build test and implement get contacts details
+
 
 import com.addressbook.validator.Validators;
 
@@ -9,7 +9,6 @@ import java.util.Map;
 
 public class Contact {
 
-    private static int nextId = 1;
     private int id;
     private String name;
     private String phoneNumber;
@@ -17,7 +16,7 @@ public class Contact {
     private int addressBookId;
 
     public Contact(String name, String phoneNumber, String email) throws Exception {
-        this.id = Contact.nextId ++;
+
         this.name = Validators.validateName(name);
         this.phoneNumber = Validators.validatePhoneNumber(phoneNumber);
         this.email = email;

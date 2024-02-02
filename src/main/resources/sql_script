@@ -1,0 +1,25 @@
+CREATE TABLE User (
+                      id INTEGER PRIMARY KEY AUTOINCREMENT,
+                      firstName TEXT,
+                      lastName TEXT,
+                      phoneNumber TEXT,
+                      email TEXT
+);
+
+
+CREATE TABLE AddressBook (
+                             id INTEGER PRIMARY KEY AUTOINCREMENT,
+                             addressBookName TEXT,
+                             userId INTEGER,
+                             createdDate TEXT,
+                             FOREIGN KEY(userId) REFERENCES User(id)
+);
+
+CREATE TABLE Contact (
+                         id INTEGER PRIMARY KEY AUTOINCREMENT,
+                         name TEXT,
+                         phoneNumber TEXT,
+                         email TEXT,
+                         addressBookId INTEGER,
+                         FOREIGN KEY(addressBookId) REFERENCES AddressBook(id)
+);

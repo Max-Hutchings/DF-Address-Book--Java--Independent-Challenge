@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 
 public class AddressBook {
-    private static int nextId = 1;
+
     private int id;
     private String addressBookName;
     private int userId;
