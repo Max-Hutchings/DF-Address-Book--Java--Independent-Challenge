@@ -54,4 +54,15 @@ public class MockEntities {
         return mockAddressBook;
 
     }
+
+    public static User getMockUser(String fName, String lName, String phoneNumber, String email){
+        User mockUser = mock(User.class);
+        when(mockUser.getFName()).thenReturn(fName);
+        when(mockUser.getLName()).thenReturn(lName);
+        when(mockUser.getPhoneNumber()).thenReturn(phoneNumber);
+        when(mockUser.getEmail()).thenReturn(email);
+
+
+        return mockUser;
+    }
 }

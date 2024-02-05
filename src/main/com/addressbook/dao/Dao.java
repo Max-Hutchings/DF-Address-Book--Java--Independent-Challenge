@@ -16,6 +16,8 @@ public class Dao {
 
     private static Connection connect(){
         String databaseUrl = "jdbc:sqlite:src/main/resources/database";
+//        if (test) databaseUrl = "jdbc:h2:mem:test;MODE=SQLite;DB_CLOSE_DELAY=-1";
+
         Connection conn  = null;
         try{
             conn = DriverManager.getConnection(databaseUrl);
@@ -25,6 +27,8 @@ public class Dao {
         }
         return conn;
     }
+
+
 
 
     public static void saveContact(Contact contact){
@@ -38,6 +42,7 @@ public class Dao {
 
     public static void saveUser(User user){
         String sql = "INSERT INTO User(fName, lName, phoneNumber, email) VALUES(?, ?, ?, ?)";
+
 
 //        the () brackets ensure the connection is closed at end of try block
         try (Connection conn = connect()) {

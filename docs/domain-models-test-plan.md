@@ -112,3 +112,10 @@ classDiagram
 ![img_5.png](img_5.png)
 
 ![img_6.png](img_6.png)
+
+
+![img_7.png](img_7.png)
+
+
+Resources
+https://jenkov.com/tutorials/java-unit-testing/database-testing-crud.html
