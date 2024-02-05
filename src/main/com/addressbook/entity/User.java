@@ -11,7 +11,7 @@ public class User {
     private String email;
     private ArrayList<AddressBook> addressBooks = new ArrayList<>();
 
-    User(String fName, String lName, String phoneNumber, String email){
+    public User(String fName, String lName, String phoneNumber, String email){
 
         this.fName = fName;
         this.lName = lName;
@@ -19,7 +19,7 @@ public class User {
         this.email = email;
     }
 
-    User(int id, String fName, String lName, String phoneNumber, String email){
+    public User(int id, String fName, String lName, String phoneNumber, String email){
         this.id = id;
         this.fName = fName;
         this.lName = lName;

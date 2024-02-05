@@ -13,9 +13,10 @@ public class AddressBook {
     private String createdDate;
 
 
-    public AddressBook(String addressBookName){
+    public AddressBook(String addressBookName, User user){
         this.addressBookName = addressBookName;
-        this.createdDate = "17-03-2001";
+        this.userId = user.getId();
+
     }
 
     public AddressBook(int id, String addressBookName, int userId){

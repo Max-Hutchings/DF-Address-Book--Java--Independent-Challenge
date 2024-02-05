@@ -12,9 +12,10 @@ public class AddressBookTest {
     public void testAddContactToAddressBook(){
 //        Arrange
         Contact mockContact = MockEntities.getMockContactPreBuilt();
+        User mockUser = MockEntities.getMockUserWithId("Max", "Hutchings", "07710308733", "max@gmail.com", 1);
 
 //        Act
-        AddressBook addressBook = new AddressBook("Favourite Address Book");
+        AddressBook addressBook = new AddressBook("Favourite Address Book", mockUser);
         addressBook.addContact(mockContact);
         int NumberOfAddressBookContacts = addressBook.getContacts().size();
 
@@ -26,9 +27,10 @@ public class AddressBookTest {
     @Test
     public void testPrintAddressBook(){
 //        Arrange
+        User mockUser = MockEntities.getMockUserWithId("Max", "Hutchings", "07710308733", "max@gmail.com", 1);
         Contact mockContact1 = MockEntities.getMockContactInputDetails("John Williams", "07710308744", "thephantommenace@gmail.com", 1);
         Contact mockContact2 = MockEntities.getMockContactInputDetails("Katy Perry", "0771345744", "babythefirework@gmail.com", 2);
-        AddressBook addressBook = new AddressBook("My favourite Address Book");
+        AddressBook addressBook = new AddressBook("My favourite Address Book", mockUser);
         addressBook.addContact(mockContact1);
         addressBook.addContact(mockContact2);
 

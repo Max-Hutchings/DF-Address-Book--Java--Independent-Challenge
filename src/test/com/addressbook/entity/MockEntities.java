@@ -26,6 +26,18 @@ public class MockEntities {
         return mockContact;
     }
 
+    public static Contact getMockContactNoId(String name, String phoneNumber, String email, int addressBookId){
+        Contact mockContact = mock(Contact.class);
+        when(mockContact.getName()).thenReturn(name);
+        when(mockContact.getPhoneNumber()).thenReturn(phoneNumber);
+        when(mockContact.getEmail()).thenReturn(email);
+        when(mockContact.getAddressBookId()).thenReturn(addressBookId);
+
+        return mockContact;
+    }
+
+
+
     public static Contact getMockContactPreBuilt(){
         Contact mockContact = mock(Contact.class);
         when(mockContact.getName()).thenReturn("Joe Doe");
@@ -42,6 +54,15 @@ public class MockEntities {
         when(mockContact.getContactDetails()).thenReturn(contactDetails);
 
         return mockContact;
+    }
+
+    public static AddressBook getMockAddressBookNoId(String name, User user){
+        AddressBook mockAddressBook = mock(AddressBook.class);
+        when(mockAddressBook.getAddressBookName()).thenReturn(name);
+        when(mockAddressBook.getUserId()).thenReturn(user.getId());
+
+        return mockAddressBook;
+
     }
 
     public static AddressBook getMockAddressBookInputDetails(int id, String name, int userId){
@@ -61,7 +82,19 @@ public class MockEntities {
         when(mockUser.getLName()).thenReturn(lName);
         when(mockUser.getPhoneNumber()).thenReturn(phoneNumber);
         when(mockUser.getEmail()).thenReturn(email);
+        when(mockUser.getFullName()).thenReturn(fName + " " + lName);
 
+        return mockUser;
+    }
+
+    public static User getMockUserWithId(String fName, String lName, String phoneNumber, String email, int id){
+        User mockUser = mock(User.class);
+        when(mockUser.getFName()).thenReturn(fName);
+        when(mockUser.getLName()).thenReturn(lName);
+        when(mockUser.getPhoneNumber()).thenReturn(phoneNumber);
+        when(mockUser.getEmail()).thenReturn(email);
+        when(mockUser.getFullName()).thenReturn(fName + " " + lName);
+        when(mockUser.getId()).thenReturn(id);
 
         return mockUser;
     }
