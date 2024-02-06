@@ -21,7 +21,8 @@ public class ContactTest {
     public void returnContactDetailsTest(){
         try {
             // ARRANGE
-            Contact tempContact = new Contact("Max Hutchings", "077123453", "maxraxlax@gmail.com");
+            AddressBook mockAddressBookInputDetails = MockEntities.getMockAddressBookInputDetails(1, "My new address book", 1);
+            Contact tempContact = new Contact(1, 1, "Max Hutchings", "077123453", "maxraxlax@gmail.com");
             Map<String, String> expectedValue = new HashMap<>();
             expectedValue.put("id", "1");
             expectedValue.put("name", "Max Hutchings");
@@ -36,6 +37,7 @@ public class ContactTest {
             assertEquals(expectedValue, contactDetails);
         } catch(Exception e){
             fail("No exception should arise");
+            System.out.println(e.getMessage());
         }
     }
 }

@@ -14,9 +14,10 @@ public class saverAddressBookTest extends saverTests {
     public void testSaveAndGetAddressBook(){
         User mockUser = MockEntities.getMockUserWithId("Max", "Hutchings", "07710308733", "max@gmail.com", 1);
         try {
-            AddressBook mockAddressBook = MockEntities.getMockAddressBookNoId("My new address book", mockUser);
+            AddressBook mockAddressBook = MockEntities.getMockAddressBookNoId("My new address book", mockUser.getId());
             AddressBook addressBook = AddressBookSaver.saveAddressBook(mockAddressBook);
 
+            assert addressBook != null;
             assertEquals("My new address book", addressBook.getAddressBookName());
 
         }catch(Exception e){

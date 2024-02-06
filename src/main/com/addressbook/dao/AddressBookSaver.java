@@ -4,6 +4,7 @@ import com.addressbook.entity.AddressBook;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class AddressBookSaver extends Dao {
@@ -26,22 +27,24 @@ public class AddressBookSaver extends Dao {
 
     public static AddressBook getAddressBook(String addressBookName, int userId){
         String sql = "SELECT * FROM AddressBook WHERE addressBookName = ? AND userId = ?";
-        AddressBook addressBook = null;
+
 
         AddressBook fetchedAddressBook = null;
         try(Connection connection = connect()){
             PreparedStatement pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, addressBookName);
             pstmt.setInt(2, userId);
+            ResultSet rs = pstmt.executeQuery();
 
-            if(pstmt.executeQuery().next()){
-                int id = pstmt.getResultSet().getInt("id");
-                String name = pstmt.getResultSet().getString("addressBookName");
-                int user = pstmt.getResultSet().getInt("userId");
+            if(rs.next()){
+                int id = rs.getInt("id");
+                String name = rs.getString("addressBookName");
+                int user = rs.getInt("userId");
 
                 fetchedAddressBook = new AddressBook(id, name, user);
             }
         } catch (SQLException e){
+            System.out.println("Casuing error");
             System.out.println(e.getMessage());
         }
         return fetchedAddressBook;

@@ -16,11 +16,12 @@ public class Contact {
     private int addressBookId;
 
     // Constructor for creating a new contact
-    public Contact(String name, String phoneNumber, String email) throws Exception {
+    public Contact(String name, String phoneNumber, String email, AddressBook addressBook) throws Exception {
 
         this.name = Validators.validateName(name);
         this.phoneNumber = Validators.validatePhoneNumber(phoneNumber);
         this.email = Validators.validateEmail(email).toString();
+        this.addressBookId = addressBook.getId();
     }
 //    Constructor for fetching a contact from the database
     public Contact(int id, int addressBookId, String name, String phoneNumber, String email){

@@ -19,6 +19,7 @@ public class ContactSaver extends Dao{
             pstmt.setString(3, contact.getEmail());
             pstmt.setInt(4, contact.getAddressBookId());
             pstmt.executeUpdate();
+            System.out.println(contact.getName() + " saved successfully");
             return ContactSaver.getContact(contact);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -44,6 +45,7 @@ public class ContactSaver extends Dao{
                 String email = rs.getString("email");
                 int addressBookId = rs.getInt("addressBookId");
                 fetchedContact = new Contact(id, addressBookId,  name, phoneNumber, email);
+
                 return fetchedContact;
             }
         } catch (Exception e){

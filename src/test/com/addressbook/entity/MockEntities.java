@@ -56,10 +56,10 @@ public class MockEntities {
         return mockContact;
     }
 
-    public static AddressBook getMockAddressBookNoId(String name, User user){
+    public static AddressBook getMockAddressBookNoId(String name, int userId){
         AddressBook mockAddressBook = mock(AddressBook.class);
         when(mockAddressBook.getAddressBookName()).thenReturn(name);
-        when(mockAddressBook.getUserId()).thenReturn(user.getId());
+        when(mockAddressBook.getUserId()).thenReturn(userId);
 
         return mockAddressBook;
 

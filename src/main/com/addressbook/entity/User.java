@@ -85,7 +85,8 @@ public class User {
         addressBookList.append(this.getFullName()).append("'s address books");
         addressBookList.append("\n------------------------");
         if (this.addressBooks.isEmpty()){
-            addressBookList.append("No address books yet for ").append(this.getFName());
+            addressBookList.append("\nNo address books yet for ").append(this.getFName());
+            System.out.println(addressBookList);
             return addressBookList.toString();
         }else {
             for (AddressBook addressBook : this.addressBooks) {
