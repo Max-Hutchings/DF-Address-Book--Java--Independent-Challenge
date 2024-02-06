@@ -2,6 +2,7 @@ package com.addressbook;
 
 import com.addressbook.dao.CompleteUserBuilder;
 import com.addressbook.dao.ContactSaver;
+import com.addressbook.dao.Dao;
 import com.addressbook.entity.AddressBook;
 import com.addressbook.entity.Contact;
 import com.addressbook.entity.User;
@@ -40,5 +41,17 @@ public class AddressBookApplication2 {
         Contact savedAndUpdatedContact = ContactSaver.updateContact(toEditContact);
         System.out.println(savedAndUpdatedContact.getContactDetails());
 
+
+
+
+
+        System.out.println("\n--------------Search by phone or email----------------\n");
+
+        Contact byPhone = myAddressBook.findContactByPhone("07710308733");
+        Contact byEmail = myAddressBook.findContactByEmail("aliceedownthehole@gmail.com");
+
+
+
+        Dao.resetSQL();
     }
 }

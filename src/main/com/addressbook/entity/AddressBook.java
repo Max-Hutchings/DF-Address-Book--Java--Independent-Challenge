@@ -66,6 +66,28 @@ public class AddressBook {
         return null;
     }
 
+    public Contact findContactByPhone(String phoneNumber){
+        for (Contact contact: contacts){
+            if (contact.getPhoneNumber().equals(phoneNumber)){
+                System.out.println(contact.getContactDetails());
+                return contact;
+            }
+        }
+        System.out.println("Failed to find user");
+        return null;
+    }
+
+    public Contact findContactByEmail(String email){
+        for (Contact contact: contacts){
+            if (contact.getEmail().equals(email)){
+                System.out.println(contact.getContactDetails());
+                return contact;
+            }
+        }
+        System.out.println("Failed to find user");
+        return null;
+    }
+
 
     public void removeContact(Contact contact){
         contacts.remove(contact);
