@@ -6,9 +6,9 @@ import java.sql.SQLException;
 
 import static com.addressbook.dao.Dao.connect;
 
-public class saverTests {
+public class SaverTests {
 
-    protected void resetSQL(){
+    public static void resetSQL(){
         String[] sqlStatements = {
                 "DELETE FROM User",
                 "DELETE FROM AddressBook",

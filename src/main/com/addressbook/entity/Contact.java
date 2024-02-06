@@ -2,6 +2,7 @@ package com.addressbook.entity;
 
 
 
+import com.addressbook.validator.DatabaseValidators;
 import com.addressbook.validator.Validators;
 
 import java.util.HashMap;
@@ -19,8 +20,8 @@ public class Contact {
     public Contact(String name, String phoneNumber, String email, AddressBook addressBook) throws Exception {
 
         this.name = Validators.validateName(name);
-        this.phoneNumber = Validators.validatePhoneNumber(phoneNumber);
-        this.email = Validators.validateEmail(email).toString();
+        this.phoneNumber = DatabaseValidators.phoneNumberDatabaseValidator(Validators.validatePhoneNumber(phoneNumber), addressBook.getId());
+        this.email = DatabaseValidators.emailDatabaseValidator(Validators.validateEmail(email).toString(), addressBook.getId());
         this.addressBookId = addressBook.getId();
     }
 //    Constructor for fetching a contact from the database

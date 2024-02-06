@@ -66,4 +66,20 @@ public class ContactSaver extends Dao{
         }
         return false;
     }
+
+    public static Contact updateContact(Contact contact){
+        String sql = "UPDATE Contact SET name = ?, phoneNumber = ?, email = ? WHERE id = ?";
+        try(Connection conn = connect()){
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, contact.getName());
+            pstmt.setString(2, contact.getPhoneNumber());
+            pstmt.setString(3, contact.getEmail());
+            pstmt.setInt(4, contact.getId());
+            pstmt.executeUpdate();
+            return ContactSaver.getContact(contact);
+        } catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 }

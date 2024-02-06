@@ -55,6 +55,23 @@ public class AddressBook {
         System.out.println("Added " + contact.getName() + " to contacts.");
     }
 
+    public Contact findContact(String name){
+        for (Contact contact: contacts){
+            if (contact.getName().equals(name)){
+                System.out.println(contact.getContactDetails());
+                return contact;
+            }
+        }
+        System.out.println("Failed to find user");
+        return null;
+    }
+
+
+    public void removeContact(Contact contact){
+        contacts.remove(contact);
+        System.out.println("Removed " + contact.getName() + " from contacts.");
+    }
+
     public String printAddressBook(){
         StringBuilder message = new StringBuilder();
         message.append(this.addressBookName);

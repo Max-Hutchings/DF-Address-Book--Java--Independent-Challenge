@@ -4,16 +4,11 @@ import com.addressbook.entity.MockEntities;
 import com.addressbook.entity.User;
 import org.junit.jupiter.api.Test;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
-import static com.addressbook.dao.Dao.connect;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
-public class saverUserTest extends saverTests{
+public class saverUserTest extends SaverTests {
 
 
 

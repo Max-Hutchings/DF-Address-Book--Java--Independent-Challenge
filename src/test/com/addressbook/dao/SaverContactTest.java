@@ -3,12 +3,11 @@ package com.addressbook.dao;
 import com.addressbook.entity.AddressBook;
 import com.addressbook.entity.Contact;
 import com.addressbook.entity.MockEntities;
-import com.addressbook.entity.User;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class SaverContactTest extends saverTests{
+public class SaverContactTest extends SaverTests {
 
     @Test
     public void testSaveAndGetContact() {

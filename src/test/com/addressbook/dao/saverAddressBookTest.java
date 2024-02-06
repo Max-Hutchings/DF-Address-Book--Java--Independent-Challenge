@@ -5,10 +5,9 @@ import com.addressbook.entity.MockEntities;
 import com.addressbook.entity.User;
 import org.junit.jupiter.api.Test;
 
-import static com.addressbook.dao.Dao.connect;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class saverAddressBookTest extends saverTests {
+public class saverAddressBookTest extends SaverTests {
 
     @Test
     public void testSaveAndGetAddressBook(){

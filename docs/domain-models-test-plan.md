@@ -16,6 +16,7 @@ classDiagram
     Dao <|-- AddressBookSaver
     Dao <|-- UserSaver
     Dao <|-- ContactSaver
+    Dao <|-- CompleteUserSaver
     
     class User{
         -int id
@@ -114,6 +115,12 @@ classDiagram
         +getContact() Contact
         +updateContact() Contact
         +deleteContact() Boolean
+    }
+    
+    class CompleteUserSaver{
+        +getUserWithContent() User
+        +getAllAddressBooks() ArrayList<AddressBook>
+        +getAllContacts() ArrayList<Contact>
     }
     
     class consoleInterface{
