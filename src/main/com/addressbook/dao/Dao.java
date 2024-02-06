@@ -2,6 +2,7 @@ package com.addressbook.dao;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class Dao {
@@ -18,6 +19,23 @@ public class Dao {
             System.out.println(e.getMessage());
         }
         return conn;
+    }
+
+    public static void resetSQL(){
+        String[] sqlStatements = {
+                "DELETE FROM User",
+                "DELETE FROM AddressBook",
+                "DELETE FROM Contact"
+        };
+
+        try (Connection conn = connect()) {
+            for (String sql : sqlStatements) {
+                PreparedStatement pstmt = conn.prepareStatement(sql);
+                pstmt.executeUpdate();
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
 }

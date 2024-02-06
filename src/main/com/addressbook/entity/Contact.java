@@ -15,12 +15,14 @@ public class Contact {
     private String email;
     private int addressBookId;
 
+    // Constructor for creating a new contact
     public Contact(String name, String phoneNumber, String email) throws Exception {
 
         this.name = Validators.validateName(name);
         this.phoneNumber = Validators.validatePhoneNumber(phoneNumber);
-        this.email = email;
+        this.email = Validators.validateEmail(email).toString();
     }
+//    Constructor for fetching a contact from the database
     public Contact(int id, int addressBookId, String name, String phoneNumber, String email){
         this.id = id;
         this.name = name;
@@ -38,7 +40,7 @@ public class Contact {
         return name;
     }
 
-    public void setName(String name) {
+    public void setName(String name){
         this.name = name;
     }
 
@@ -46,16 +48,16 @@ public class Contact {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public void setPhoneNumber(String phoneNumber) throws Exception {
+        this.phoneNumber = Validators.validatePhoneNumber(phoneNumber);
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setEmail(String email) throws Exception {
+        this.email = Validators.validateEmail(email).toString();
     }
 
     public int getAddressBookId() {

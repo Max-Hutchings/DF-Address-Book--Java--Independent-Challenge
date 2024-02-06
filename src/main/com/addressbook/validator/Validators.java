@@ -6,16 +6,19 @@ import javax.mail.internet.InternetAddress;
 
 public class Validators {
 
+//    Validate Name
     public static String validateName(String name) throws Exception{
-        if (name.trim().isEmpty()) throw new Exception("Your name cannot be empty");
+        String tempName = name.trim();
+        if (tempName.isEmpty()) throw new Exception("Your name cannot be empty");
         String[] illegalCharacters = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "/", ".", ",", ";", ":", "#", "@"};
         for (String character: illegalCharacters){
-            if (name.contains(character)) throw new Exception("Cannot use the character: " + "'" + character + "'");
+            if (tempName.contains(character)) throw new Exception("Cannot use the character: " + "'" + character + "'");
         }
-        if (name.length() > 50) throw new Exception("Please enter a shorter name");
-        return name;
+        if (tempName.length() > 50) throw new Exception("Please enter a shorter name");
+        return tempName;
     }
 
+//    Validate phone numberInt
     public static String validatePhoneNumber(String number)throws Exception{
         String tempNum = number.trim();
         int length = tempNum.length();
@@ -25,7 +28,7 @@ public class Validators {
         return tempNum;
     }
 
-
+//     Validate email
     public static InternetAddress validateEmail(String email) throws Exception{
         try{
             InternetAddress emailAddress = new InternetAddress(email);
@@ -35,6 +38,7 @@ public class Validators {
             throw new Exception("Invalid Email Address");
         }
     }
+
 
 
 

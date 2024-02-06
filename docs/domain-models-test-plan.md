@@ -13,6 +13,9 @@ classDiagram
     direction TB
     User <-- AddressBook
     AddressBook <-- Contact
+    Dao <|-- AddressBookSaver
+    Dao <|-- UserSaver
+    Dao <|-- ContactSaver
     
     class User{
         -int id
@@ -30,12 +33,13 @@ classDiagram
         +getFullName() String
         +getPhoneNumber() Long
         +getEmail() String
-        +getAddressBooks() AddressBook[]
+        +getAddressBooks() ArrayList<AddressBook>
         +setFName() void
         +setLName() void
         +setPhoneNumber() void
         +setEmail() void
         +AddAddressBook() void
+        +printAddressBooks() String
     }
     
     class AddressBook{
@@ -54,6 +58,7 @@ classDiagram
         +viewAllContacts() ArrayList<Contacts>
         +deleteAllContacts() void
         +setContactAddressBookId() void
+        +printAddressBook() String
         
  }
  
@@ -72,6 +77,8 @@ classDiagram
         +getName() String
         +getPhoneNumber() Long
         +getEmail() String
+        +getAddressBookId() int
+        getContactDetails() Map<String, String>
         
     }
     
@@ -79,15 +86,34 @@ classDiagram
         <<abstract>>
         +validateName()$ String
         +validatePhoneNumber()$ Long
-        +validateEmail()$ String
+        +validateEmail()$ InternetAddress
     }
     
     class Dao{
-        <<abstract>>
-        +saveContact()$ void
-        +saveAddressBook()$ void
-        +getUser()$ User
-        +getAddressBook()$ AddressBook
+        
+        +connect() Connection
+        +deleteDataFromAllTables() void
+    }
+    
+    class AddressBookSaver {
+        +saveAddressBook() AddressBook
+        +getAddressBook() AddressBook
+        +updateAddressBook() AddressBook
+        +deleteAddressBook() Boolean
+    }
+    
+    class UserSaver {
+        +saveUser() User
+        +getUser() User
+        +updateUser() User
+        +deleteUser() Boolean
+    }
+    
+    class ContactSaver {
+        +saveContact() Contact
+        +getContact() Contact
+        +updateContact() Contact
+        +deleteContact() Boolean
     }
     
     class consoleInterface{

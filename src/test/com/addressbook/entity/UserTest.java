@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class UserTest {
 
     @Test
-    public void testAddAddressBook(){
+    public void testAddAddressBook() throws Exception {
         AddressBook mockAddressBook = MockEntities.getMockAddressBookInputDetails(1, "My Address Book", 1);
 
         User user = new User("Ed", "Wright", "07710307623", "ed@digitalfutures.com");
@@ -19,7 +19,7 @@ public class UserTest {
     }
 
     @Test
-    public void testPrintAddressBooks(){
+    public void testPrintAddressBooks() throws Exception {
 //        Arrange
         AddressBook mockAddressBook1 = MockEntities.getMockAddressBookInputDetails(1, "My Address Book", 1);
         AddressBook mockAddressBook2 = MockEntities.getMockAddressBookInputDetails(2, "My second", 1);
