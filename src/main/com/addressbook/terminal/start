@@ -1,89 +1,112 @@
-package com.addressbook;
-
-import com.addressbook.dao.UserSaver;
-import com.addressbook.entity.User;
-
-import java.util.Scanner;
-
-public class AddressBookApplication {
-
-    public static User createOrLoadUser(){
-        System.out.println("Please select an option:");
-        System.out.println("1. Create a new user");
-        System.out.println("2. Load an existing user");
-
-        Scanner input = new Scanner(System.in);
-        byte option = input.nextByte();
-        User user = null;
-        if (option == 1){
-            user = creatingNewUser();
-        } else if (option == 2){
-            user = loadUser();
-        } else {
-            System.out.println("Invalid option");
-            user = createOrLoadUser();
-        }
-        return user;
-    }
-
-    private static User creatingNewUser(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please enter your first name:");
-        String firstName = input.nextLine();
-        System.out.println("Please enter your last name:");
-        String lastName = input.nextLine();
-        System.out.println("Please enter your phone number:");
-        String phoneNumber = input.nextLine();
-        System.out.println("Please enter your email address:");
-        String email = input.nextLine();
-
-        try{
-            return new User(firstName, lastName, phoneNumber, email);
-        } catch (Exception e){
-            System.out.println("Failed to create user");
-        }
-        return null;
-    }
-
-    public static User loadUser(){
-        Scanner input = new Scanner(System.in);
-        System.out.println("Please enter your first name");
-        String fName = input.nextLine();
-        System.out.println("Please enter your last name");
-        String lName = input.nextLine();
-
-        try{
-            return UserSaver.getUser(fName, lName);
-        } catch (Exception e){
-            System.out.println("Failed to load user");
-        }
-        return null;
-    }
-
-    public static void offerUserOptions(){
-        System.out.println("Please select an option:");
-        System.out.println("1. Create a new address book");
-        System.out.println("2. Print all address books");
-//        System.out.println("3. ");
-
-    }
-
-    public static void main(String[] args) {
-
-        System.out.println("Hello, welcome to the Address Book Application!");
-
-        boolean running = true;
-
-        while(running){
-
-//            Get the user to create or load a user
-            User user = createOrLoadUser();
-
-//            Offer the user a selection of activities to perform
-
-
-
-        }
-
-    }
-}
+//package com.addressbook;
+//
+//import com.addressbook.dao.UserSaver;
+//import com.addressbook.entity.User;
+//
+//import java.util.Scanner;
+//
+//public class ConsoleApplication {
+//
+//    public static User createOrLoadUser(){
+//        System.out.println("Please select an option:");
+//        System.out.println("1. Create a new user");
+//        System.out.println("2. Load an existing user");
+//
+//        Scanner input = new Scanner(System.in);
+//        byte option = input.nextByte();
+//        User user = null;
+//        if (option == 1){
+//            user = creatingNewUser();
+//        } else if (option == 2){
+//            user = loadUser();
+//        } else {
+//            System.out.println("Invalid option");
+//            user = createOrLoadUser();
+//        }
+//        return user;
+//    }
+//
+//    private static User creatingNewUser(){
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Please enter your first name:");
+//        String firstName = input.nextLine();
+//        System.out.println("Please enter your last name:");
+//        String lastName = input.nextLine();
+//        System.out.println("Please enter your phone number:");
+//        String phoneNumber = input.nextLine();
+//        System.out.println("Please enter your email address:");
+//        String email = input.nextLine();
+//
+//        try{
+//            return new User(firstName, lastName, phoneNumber, email);
+//        } catch (Exception e){
+//            System.out.println("Failed to create user");
+//        }
+//        return null;
+//    }
+//
+//    public static User loadUser(){
+//        Scanner input = new Scanner(System.in);
+//        System.out.println("Please enter your first name");
+//        String fName = input.nextLine();
+//        System.out.println("Please enter your last name");
+//        String lName = input.nextLine();
+//
+//        try{
+//            return UserSaver.getUser(fName, lName);
+//        } catch (Exception e){
+//            System.out.println("Failed to load user");
+//        }
+//        return null;
+//    }
+//
+//    public static void offerUserOptions(User user){
+//        System.out.println("Please select an option:");
+//        System.out.println("1. Create a new address book");
+//        System.out.println("2. Print all address books");
+//
+//        Scanner input = new Scanner(System.in);
+//        byte option = input.nextByte();
+//        switch (option){
+//            case 1:
+//                createNewAddressBook(user);
+//                break;
+//            case 2:
+//                printAllAddressBooks(user);
+//                break;
+//            default:
+//                System.out.println("Invalid option");
+//                offerUserOptions();
+//        }
+//
+//        public static void createNewAddressBook(User user){
+//            Scanner input = new Scanner(System.in);
+//            System.out.println("Please enter the name of the address book");
+//            String addressBookName = input.nextLine();
+//            user.addAddressBook(addressBookName);
+//            return user;
+//        }
+//
+////        System.out.println("3. ");
+//
+//    }
+//
+//    public static void main(String[] args) {
+//
+//        System.out.println("Hello, welcome to the Address Book Application!");
+//
+//        boolean running = true;
+//
+//        while(running){
+//
+////            Get the user to create or load a user
+//            User user = createOrLoadUser();
+//
+////            Offer the user a selection of activities to perform
+//            offerUserOptions(User);
+//
+//
+//        }
+//
+//    }
+//}

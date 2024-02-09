@@ -1,5 +1,6 @@
 package com.addressbook.entity;
 
+import com.addressbook.gui.Printer;
 import com.addressbook.validator.Validators;
 
 import java.util.ArrayList;
@@ -81,21 +82,8 @@ public class User {
     }
 
     public String printAddressBooks(){
-        StringBuilder addressBookList = new StringBuilder();
-        addressBookList.append(this.getFullName()).append("'s address books");
-        addressBookList.append("\n------------------------");
-        if (this.addressBooks.isEmpty()){
-            addressBookList.append("\nNo address books yet for ").append(this.getFName());
-            System.out.println(addressBookList);
-            return addressBookList.toString();
-        }else {
-            for (AddressBook addressBook : this.addressBooks) {
-                addressBookList.append("\n");
-                addressBookList.append(addressBook.getAddressBookName());
-            }
-            System.out.println(addressBookList);
-            return addressBookList.toString();
-        }
+        return Printer.printAddressBooksList(this.getFullName(), this.fName, this.addressBooks);
+
     }
 
 

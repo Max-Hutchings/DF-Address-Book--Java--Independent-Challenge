@@ -39,6 +39,7 @@ public class UserTest {
         stringBuilder.append("My second");
 
         String expectedValue = stringBuilder.toString();
+        System.out.println(expectedValue);
 
 //        Act
         String printStatement = user.printAddressBooks();

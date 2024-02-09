@@ -1,5 +1,7 @@
 package com.addressbook.entity;
 
+import com.addressbook.gui.Printer;
+
 import java.util.ArrayList;
 
 
@@ -95,26 +97,7 @@ public class AddressBook {
     }
 
     public String printAddressBook(){
-        StringBuilder message = new StringBuilder();
-        message.append(this.addressBookName);
-        message.append("\n-----------------------------------------------------------------");
-        message.append("\nContacts");
-        message.append("\n-----------------------------------------------------------------\n");
-
-        if (contacts.isEmpty()){
-            message.append(" - Add a contact :) \n");
-        }else{
-            for (Contact contact: contacts){
-                message.append(contact.getName());
-                message.append(" | ");
-                message.append(contact.getPhoneNumber());
-                message.append(" | ");
-                message.append(contact.getEmail());
-                message.append("\n");
-            }
-        }
-        System.out.println(message);
-        return message.toString();
+        return Printer.printAddressBook(this.addressBookName, this.contacts);
 
     }
 }
