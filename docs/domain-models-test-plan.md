@@ -167,6 +167,11 @@ classDiagram
         +getAllContacts() ArrayList<Contact>
     }
     
+    class Printer {
+        +printAddressBook() String
+        +printAddressBoolList() String
+    }
+    
     class consoleInterface{
         
     }
