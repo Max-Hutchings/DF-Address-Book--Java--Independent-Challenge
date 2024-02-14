@@ -2,6 +2,9 @@ target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+!**/src/main/com/addressbook/ConsoleApplication.java
+!**/src/main/com/addressbook/ConsoleApplication2.java
+!**/src/main/com/addressbook/terminal
 
 ### IntelliJ IDEA ###
 .idea/modules.xml

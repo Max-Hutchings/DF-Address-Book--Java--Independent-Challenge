@@ -27,8 +27,6 @@ public class Validators {
         if (length != 11 && length != 13) throw new Exception("Please enter a correct length number");
         if (tempNum.charAt(0) != '0' && tempNum.charAt(0) != '+') throw new Exception("Please start the number with a 0 or +");
         if (!tempNum.matches("^[0-9+]*$")) throw new Exception("Please enter valid characters");
-
-
         return tempNum;
     }
 

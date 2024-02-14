@@ -78,35 +78,7 @@
 //
 //        choice = scanner.nextInt();
 //        switch (choice){
-//            case 1:
-//                System.out.println("Enter address book name: ");
-//                addressBookName = scanner.nextLine();
-//                AddressBook addressBook = user.findAddressBook(addressBookName);
-//                if (addressBook != null){
-//                    System.out.println("Enter contact name: ");
-//                    String contactName = scanner.nextLine();
-//                    System.out.println("Enter contact phone number: ");
-//                    String contactPhoneNumber = scanner.nextLine();
-//                    System.out.println("Enter contact email: ");
-//                    String contactEmail = scanner.nextLine();
-//                    addressBook.addContact(new Contact(contactName, contactPhoneNumber, contactEmail));
-//                } else {
-//                    System.out.println("Address book not found");
-//                }
-//                break;
-//            case 2:
-//                System.out.println("Enter address book name: ");
-//                addressBookName = scanner.nextLine();
-//                AddressBook addressBook = user.findAddressBook(addressBookName);
-//                if (addressBook != null){
-//                    addressBook.printContacts();
-//                } else {
-//                    System.out.println("Address book not found");
-//                }
-//                break;
-//            default:
-//                System.out.println("Invalid choice");
-//        }
+
 //
 //    }
 //
